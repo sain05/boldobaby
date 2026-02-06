@@ -1,0 +1,191 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\tx720\cf1\f0\fs38\lang16393 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+<meta charset="UTF-8">\par
+<title>For Akriti \u10084?\u-497?</title>\par
+\par
+<style>\par
+body \{\par
+  margin: 0;\par
+  overflow: hidden;\par
+  font-family: 'Arial', sans-serif;\par
+  background: linear-gradient(to right, #ff4e8d, #ff85a2);\par
+  text-align: center;\par
+  color: white;\par
+\}\par
+\par
+h1 \{\par
+  margin-top: 60px;\par
+  font-size: 42px;\par
+\}\par
+\par
+#buttons \{\par
+  margin-top: 40px;\par
+\}\par
+\par
+button \{\par
+  font-size: 20px;\par
+  padding: 15px 30px;\par
+  border: none;\par
+  border-radius: 12px;\par
+  cursor: pointer;\par
+  position: absolute;\par
+\}\par
+\par
+#yesBtn \{\par
+  background-color: #00ffcc;\par
+  left: 40%;\par
+\}\par
+\par
+#noBtn \{\par
+  background-color: #ff3333;\par
+  left: 55%;\par
+\}\par
+\par
+#message \{\par
+  display: none;\par
+  margin-top: 50px;\par
+  font-size: 28px;\par
+  animation: pop 1s ease-in-out infinite alternate;\par
+\}\par
+\par
+@keyframes pop \{\par
+  from \{transform: scale(1);\}\par
+  to \{transform: scale(1.05);\}\par
+\}\par
+\par
+/* hearts */\par
+.heart \{\par
+  position: fixed;\par
+  top: -10px;\par
+  font-size: 24px;\par
+  animation: fall 5s linear infinite;\par
+\}\par
+\par
+@keyframes fall \{\par
+  to \{ transform: translateY(100vh); opacity: 0; \}\par
+\}\par
+\par
+/* fireworks */\par
+.firework \{\par
+  position: fixed;\par
+  width: 10px;\par
+  height: 10px;\par
+  background: yellow;\par
+  border-radius: 50%;\par
+  animation: explode 1s linear forwards;\par
+\}\par
+\par
+@keyframes explode \{\par
+  to \{\par
+    transform: scale(5);\par
+    opacity: 0;\par
+  \}\par
+\}\par
+\par
+/* slideshow */\par
+#slideshow \{\par
+  display: none;\par
+  margin-top: 30px;\par
+\}\par
+#slideshow img \{\par
+  width: 250px;\par
+  border-radius: 20px;\par
+  box-shadow: 0 0 20px white;\par
+\}\par
+</style>\par
+</head>\par
+\par
+<body>\par
+\par
+<h1>Akriti, will you be my Valentine? \u-10179?\u-9066?</h1>\par
+\par
+<div id="buttons">\par
+  <button id="yesBtn" onclick="showMessage()">Yes \u-10179?\u-9067?</button>\par
+  <button id="noBtn" onmouseover="moveButton()">No \u-10179?\u-9068?</button>\par
+</div>\par
+\par
+<div id="message">\par
+  \u-10180?\u-8311? YAY AKRITI!!! \u-10180?\u-8311?  \par
+  <br><br>\par
+  You just made me the happiest person alive \u-10179?\u-8691?  \par
+  <br>\par
+  I promise to care for you, respect you and make you smile every day \u-10179?\u-9067?  \par
+  <br><br>\par
+  I LOVE YOU \u10084?\u-497?  \par
+  <br><br>\par
+  <button onclick="shareWhatsApp()">Share on WhatsApp \u-10179?\u-9044?</button>\par
+</div>\par
+\par
+<div id="slideshow">\par
+  <img id="slide" src="https://i.imgur.com/9Yj8Z0T.jpeg">\par
+</div>\par
+\par
+<audio id="music" loop>\par
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">\par
+</audio>\par
+\par
+<script>\par
+let images = [\par
+  "https://i.imgur.com/9Yj8Z0T.jpeg",\par
+  "https://i.imgur.com/Qq7KQ2k.jpeg",\par
+  "https://i.imgur.com/Y3Z7JxZ.jpeg"\par
+];\par
+let index = 0;\par
+\par
+function moveButton() \{\par
+  let x = Math.random() * (window.innerWidth - 150);\par
+  let y = Math.random() * (window.innerHeight - 150);\par
+  let btn = document.getElementById("noBtn");\par
+  btn.style.left = x + "px";\par
+  btn.style.top = y + "px";\par
+\}\par
+\par
+function showMessage() \{\par
+  document.getElementById("buttons").style.display = "none";\par
+  document.getElementById("message").style.display = "block";\par
+  document.getElementById("slideshow").style.display = "block";\par
+  document.getElementById("music").play();\par
+\par
+  setInterval(createHeart, 300);\par
+  setInterval(createFirework, 600);\par
+  setInterval(changeSlide, 2000);\par
+\}\par
+\par
+function createHeart() \{\par
+  let heart = document.createElement("div");\par
+  heart.className = "heart";\par
+  heart.innerHTML = "\u10084?\u-497?";\par
+  heart.style.left = Math.random() * window.innerWidth + "px";\par
+  document.body.appendChild(heart);\par
+  setTimeout(() => heart.remove(), 5000);\par
+\}\par
+\par
+function createFirework() \{\par
+  let firework = document.createElement("div");\par
+  firework.className = "firework";\par
+  firework.style.left = Math.random() * window.innerWidth + "px";\par
+  firework.style.top = Math.random() * window.innerHeight + "px";\par
+  firework.style.background = hsl($\{Math.random()*360\},100%,50%);\par
+  document.body.appendChild(firework);\par
+  setTimeout(() => firework.remove(), 1000);\par
+\}\par
+\par
+function changeSlide() \{\par
+  document.getElementById("slide").src = images[index];\par
+  index = (index + 1) % images.length;\par
+\}\par
+\par
+function shareWhatsApp() \{\par
+  let text = "Akriti just said YES \u10084?\u-497?\u-10178?\u-8848?";\par
+  let url = "https://wa.me/?text=" + encodeURIComponent(text);\par
+  window.open(url, "_blank");\par
+\}\par
+</script>\par
+\par
+</body>\par
+</html>\par
+}
